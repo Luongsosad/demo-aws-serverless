@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE = '/api';
+// Use direct API URL in production, proxy in development
+const API_BASE = import.meta.env.PROD
+    ? import.meta.env.VITE_API_BASE_URL
+    : '/api';
 const CLOUDFRONT_BASE = import.meta.env.VITE_CLOUDFRONT_URL;
 
 
